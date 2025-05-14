@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Codex - Technical Club</title>
+    <link rel="stylesheet" href="main.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
+  </head>
+  <body>
+    <!-- Header -->
+    <header>
+      <div class="container header-content">
+        <div class="logo-container">
+          <a
+            href="index.html"
+            style="
+              text-decoration: none;
+              color: inherit;
+              display: flex;
+              align-items: center;
+            "
+          >
+            <img src="logo.png" alt="Codex Logo" width="50" />
+            <h1>Codex</h1>
+          </a>
+        </div>
+        <nav>
+          <button class="mobile-menu-btn" onclick="toggleMenu()">
+            <i class="fas fa-bars"></i>
+          </button>
+          <ul id="nav-links">
+            <li><a href="index.html" class="active">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="events.html">Events</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="registration.html" class="nav-cta">Join Us</a></li>
+            <li>
+              <a href="admin-login.html" class="admin-btn"
+                ><i class="fas fa-lock"></i> Admin</a
+              >
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero-banner">
+      <div class="container hero-content" data-aos="fade-up">
+        <h2>Welcome to Codex - Technical Club</h2>
+        <p>Quantum University</p>
+        <div class="hero-buttons">
+          <a href="./registration.html" class="primary-btn">Register</a>
+          <a href="#" class="secondary-btn">View Events</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats-section">
+      <div class="container stats-grid" data-aos="fade-up">
+        <div class="stat-item">
+          <i class="fas fa-users"></i>
+          <h3>500+ Members</h3>
+        </div>
+        <div class="stat-item">
+          <i class="fas fa-calendar-check"></i>
+          <h3>20+ Events</h3>
+        </div>
+        <div class="stat-item">
+          <i class="fas fa-trophy"></i>
+          <h3>10+ Awards</h3>
+        </div>
+      </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section class="gallery-section">
+      <div class="container">
+        <h2 class="section-title" data-aos="fade-down">Event Gallery</h2>
+        <div class="gallery-container" data-aos="fade-up">
+          <div class="gallery-scroll">
+            <img
+              src="gallery/Hackathon-86.jpg"
+              alt="Event Image"
+              class="gallery-img"
+            />
+            <img
+              src="gallery/Hackathon-81.jpg"
+              alt="Event Image"
+              class="gallery-img"
+            />
+            <img
+              src="gallery/Hackathon-67.jpg"
+              alt="Event Image"
+              class="gallery-img"
+            />
+            <img
+              src="gallery/Hackathon-64.jpg"
+              alt="Event Image"
+              class="gallery-img"
+            />
+            <img
+              src="gallery/Hackathon-50.jpg"
+              alt="Event Image"
+              class="gallery-img"
+            />
+            <img
+              src="gallery/Hackathon-3.jpg"
+              alt="Event Image"
+              class="gallery-img"
+            />
+          </div>
+          <button class="gallery-nav prev" onclick="scrollGallery(-1)">
+            <i class="fas fa-chevron-left"></i>
+          </button>
+          <button class="gallery-nav next" onclick="scrollGallery(1)">
+            <i class="fas fa-chevron-right"></i>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <style>
+      .gallery-section {
+        padding: 4rem 0;
+        background: var(--gray-50);
+      }
+
+      .gallery-container {
+        position: relative;
+        margin: 2rem 0;
+        padding: 0 2rem;
+      }
+
+      .gallery-scroll {
+        display: flex;
+        overflow-x: auto;
+        scroll-behavior: smooth;
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+        gap: 1rem;
+        padding: 1rem 0;
+      }
+
+      .gallery-scroll::-webkit-scrollbar {
+        display: none;
+      }
+
+      .gallery-img {
+        width: 300px;
+        height: 200px;
+        object-fit: cover;
+        border-radius: 8px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease;
+      }
+
+      .gallery-img:hover {
+        transform: scale(1.05);
+      }
+
+      .gallery-nav {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        background: white;
+        border: none;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: all 0.3s ease;
+      }
+
+      .gallery-nav:hover {
+        background: var(--primary);
+        color: white;
+      }
+
+      .gallery-nav.prev {
+        left: 0;
+      }
+
+      .gallery-nav.next {
+        right: 0;
+      }
+    </style>
+
+    <script>
+      function scrollGallery(direction) {
+        const gallery = document.querySelector(".gallery-scroll");
+        const scrollAmount = 300;
+        gallery.scrollBy({
+          left: direction * scrollAmount,
+          behavior: "smooth",
+        });
+      }
+    </script>
+
+    <!-- Events Section -->
+    <section class="events-section" id="events">
+      <div class="container">
+        <h2 class="section-title" data-aos="fade-down">Our Events</h2>
+
+        <div class="event-card" data-aos="fade-right">
+          <span class="event-tag">Workshop</span>
+          <h3>Git & GitHub Mastery</h3>
+          <div class="event-details">
+            <div class="detail-item">
+              <i class="fas fa-calendar-alt"></i> May 12, 2025
+            </div>
+            <div class="detail-item">
+              <i class="fas fa-map-marker-alt"></i> Seminar Hall
+            </div>
+            <div class="detail-item">
+              <i class="fas fa-clock"></i> 10 AM - 1 PM
+            </div>
+          </div>
+          <p>
+            Learn how to collaborate and manage projects using Git and GitHub
+            efficiently.
+          </p>
+          <div class="learning-outcomes">
+            <strong>What you'll learn:</strong>
+            <ul>
+              <li>
+                <i class="fas fa-check-circle"></i> Version control basics
+              </li>
+              <li>
+                <i class="fas fa-check-circle"></i> Real-time GitHub
+                collaboration
+              </li>
+            </ul>
+          </div>
+          <div class="speaker-card">
+            <img src="speaker.jpg" alt="Speaker" class="speaker-image" />
+            <div>
+              <p><strong>Ankur Sharma</strong></p>
+              <p class="speaker-title">DevOps Expert</p>
+            </div>
+          </div>
+          <a href="#" class="cta-button">Register Now</a>
+        </div>
+
+        <!-- Add more events as needed -->
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about-section" id="about">
+      <div class="container">
+        <h2 class="section-title" data-aos="fade-up">About Codex</h2>
+        <p class="about-description" data-aos="fade-right">
+          Codex is the official technical club of Quantum University, fostering
+          innovation and skill development in coding, AI, development, and more.
+        </p>
+
+        <div class="features-grid" data-aos="fade-up">
+          <div class="feature-card">
+            <i class="fas fa-code"></i>
+            <h3>Coding Competitions</h3>
+            <p>
+              Sharpen your logic and problem-solving skills in real-time
+              contests.
+            </p>
+          </div>
+          <div class="feature-card">
+            <i class="fas fa-lightbulb"></i>
+            <h3>Innovative Projects</h3>
+            <p>
+              Collaborate and build impactful real-world projects with peers.
+            </p>
+          </div>
+          <div class="feature-card">
+            <i class="fas fa-robot"></i>
+            <h3>Tech Workshops</h3>
+            <p>Hands-on workshops on emerging tech like AI, ML, and Web Dev.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact-section" id="contact">
+      <div class="container contact-grid">
+        <div class="contact-info" data-aos="zoom-in">
+          <h2>Contact Us</h2>
+          <div class="contact-item">
+            <i class="fas fa-envelope"></i> codex@quantumuniversity.edu.in
+          </div>
+          <div class="contact-item">
+            <i class="fas fa-phone"></i> +91 98765 43210
+          </div>
+          <div class="contact-item">
+            <i class="fas fa-map-marker-alt"></i> Roorkee, Uttarakhand
+          </div>
+          <div class="social-links">
+            <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+            <a href="#" class="social-link"><i class="fab fa-linkedin"></i></a>
+            <a href="#" class="social-link"><i class="fab fa-github"></i></a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+      <div class="footer-logo">
+        <img src="logo.png" alt="Codex Logo" width="40" />
+        <p>© 2025 Codex Technical Club</p>
+      </div>
+      <p>Quantum University | All rights reserved</p>
+    </footer>
+
+    <!-- Scripts -->
+    <script>
+      function toggleMenu() {
+        const nav = document.getElementById("nav-links");
+        nav.classList.toggle("show");
+      }
+    </script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+      AOS.init();
+    </script>
+  </body>
+</html>

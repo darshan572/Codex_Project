@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>About Us - Codex</title>
+    <link rel="stylesheet" href="main.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
+    <style>
+      .about-hero {
+        background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+          url("https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?ixlib=rb-4.0.3");
+        background-size: cover;
+        background-position: center;
+        color: white;
+        padding: 6rem 0;
+        text-align: center;
+      }
+
+      .about-hero h1 {
+        font-size: 3rem;
+        margin-bottom: 1rem;
+      }
+
+      .about-content {
+        max-width: 800px;
+        margin: 4rem auto;
+        padding: 0 2rem;
+      }
+
+      .mission-vision {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 2rem;
+        margin: 4rem 0;
+      }
+
+      .mission-card,
+      .vision-card {
+        background: white;
+        padding: 2rem;
+        border-radius: 8px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease;
+      }
+
+      .mission-card:hover,
+      .vision-card:hover {
+        transform: translateY(-5px);
+      }
+
+      .team-section {
+        margin: 4rem 0;
+      }
+
+      .team-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 2rem;
+        margin-top: 2rem;
+      }
+
+      .team-member {
+        background: white;
+        padding: 1.5rem;
+        border-radius: 8px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        text-align: center;
+        transition: transform 0.3s ease;
+      }
+
+      .team-member:hover {
+        transform: translateY(-5px);
+      }
+
+      .member-image {
+        width: 120px;
+        height: 120px;
+        border-radius: 50%;
+        margin: 0 auto 1rem;
+        overflow: hidden;
+      }
+
+      .member-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      .member-info h3 {
+        margin: 0.5rem 0;
+        color: var(--gray-900);
+      }
+
+      .member-info p {
+        color: var(--gray-600);
+        margin-bottom: 0.5rem;
+      }
+
+      .social-links {
+        display: flex;
+        justify-content: center;
+        gap: 1rem;
+        margin-top: 1rem;
+      }
+
+      .social-links a {
+        color: var(--gray-600);
+        transition: color 0.3s ease;
+      }
+
+      .social-links a:hover {
+        color: var(--primary);
+      }
+
+      .achievements {
+        margin: 4rem 0;
+      }
+
+      .achievement-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 2rem;
+        margin-top: 2rem;
+      }
+
+      .achievement-card {
+        background: white;
+        padding: 1.5rem;
+        border-radius: 8px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        text-align: center;
+        transition: transform 0.3s ease;
+      }
+
+      .achievement-card:hover {
+        transform: translateY(-5px);
+      }
+
+      .achievement-icon {
+        font-size: 2.5rem;
+        color: var(--primary);
+        margin-bottom: 1rem;
+      }
+
+      .achievement-number {
+        font-size: 2rem;
+        font-weight: bold;
+        color: var(--gray-900);
+        margin-bottom: 0.5rem;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Header -->
+    <header>
+      <div class="container header-content">
+        <div class="logo-container">
+          <img src="logo.png" alt="Codex Logo" width="50" />
+          <h1>Codex</h1>
+        </div>
+        <nav>
+          <button class="mobile-menu-btn" onclick="toggleMenu()">
+            <i class="fas fa-bars"></i>
+          </button>
+          <ul id="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html" class="active">About</a></li>
+            <li><a href="events.html">Events</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="registration.html" class="nav-cta">Join Us</a></li>
+            <li>
+              <a href="admin-login.html" class="admin-btn"
+                ><i class="fas fa-lock"></i> Admin</a
+              >
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="about-hero">
+      <div class="container">
+        <h1 data-aos="fade-up">About Codex</h1>
+        <p data-aos="fade-up" data-aos-delay="100">
+          Empowering students through technology and innovation
+        </p>
+      </div>
+    </section>
+
+    <div class="about-content">
+      <!-- Mission & Vision -->
+      <div class="mission-vision">
+        <div class="mission-card" data-aos="fade-right">
+          <h2>Our Mission</h2>
+          <p>
+            To foster a community of tech enthusiasts and innovators, providing
+            them with the platform and resources to excel in their technical
+            journey.
+          </p>
+        </div>
+        <div class="vision-card" data-aos="fade-left">
+          <h2>Our Vision</h2>
+          <p>
+            To be the leading technical club that transforms students into
+            industry-ready professionals through practical learning and hands-on
+            experience.
+          </p>
+        </div>
+      </div>
+
+      <!-- Team Section -->
+      <section class="team-section">
+        <h2 class="section-title" data-aos="fade-up">Our Team</h2>
+        <div class="team-grid">
+          <div class="team-member" data-aos="fade-up">
+            <div class="member-image">
+              <img src="images/manvi mam.jpg" alt="Faculty Advisor" />
+            </div>
+            <div class="member-info">
+              <h3>Dr. Manvi Walia</h3>
+              <p>Faculty Advisor</p>
+              <p>HOD Computer Science</p>
+              <div class="social-links">
+                <a href="https://www.linkedin.com/in/manvi-walia-b2789621a/" target="_blank"><i class="fab fa-linkedin"></i></a>
+                <a href="https://www.linkedin.com/in/manvi-walia-b2789621a/" target="_blank"><i class="fab fa-twitter"></i></a>
+              </div>
+            </div>
+          </div>
+          <div class="team-member" data-aos="fade-up" data-aos-delay="100">
+            <div class="member-image">
+              <img src="images/arshi_President.jpg" alt="President" />
+            </div>
+            <div class="member-info">
+              <h3>Arshi Tayal</h3>
+              <p>President</p>
+              <p>Third Year CSE</p>
+              <div class="social-links">
+                <a href="https://www.linkedin.com/in/arshi-tayal-1b1607273/" target="_blank"><i class="fab fa-linkedin"></i></a>
+                <a href="https://www.linkedin.com/in/arshi-tayal-1b1607273/" target="_blank"><i class="fab fa-github"></i></a>
+              </div>
+            </div>
+          </div>
+          <div class="team-member" data-aos="fade-up" data-aos-delay="200">
+            <div class="member-image">
+              <img src="images/Darshan.jpg" alt="Vice President" />
+            </div>
+            <div class="member-info">
+              <h3>Darshan Kumar</h3>
+              <p>Graphics Designer</p>
+              <p>Final Year CSE</p>
+              <div class="social-links">
+                <a href="https://www.linkedin.com/in/darshan-kumar-63ba23328/" target="_blank"><i class="fab fa-linkedin"></i></a>
+                <a href="https://github.com/darshan572" target="_blank"><i class="fab fa-github"></i></a>
+              </div>
+            </div>
+          </div>
+          <div class="team-member" data-aos="fade-up" data-aos-delay="300">
+            <div class="member-image">
+              <img src="images/ashu.jpg" alt="Technical Lead" />
+            </div>
+            <div class="member-info">
+              <h3>Ashutosh Kumar Singh</h3>
+              <p>HR </p>
+              <p>Third Year CSE</p>
+              <div class="social-links">
+                <a href="https://www.linkedin.com/in/ashutosh-kumar-924705282/" target="_blank"><i class="fab fa-linkedin"></i></a>
+                <a href="https://www.linkedin.com/in/ashutosh-kumar-924705282/"target="_blank" ><i class="fab fa-github"></i></a>
+              </div>
+            </div>
+          </div>
+          <div class="team-member" data-aos="fade-up" data-aos-delay="400">
+            <div class="member-image">
+              <img src="images/badal.jpg" alt="Event Coordinator" />
+            </div>
+            <div class="member-info">
+              <h3>Badal Kumar</h3>
+              <p>HR</p>
+              <p>Third Year CSE</p>
+              <div class="social-links">
+                <a href="#"><i class="fab fa-linkedin"></i></a>
+                <a href="#"><i class="fab fa-github"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Achievements -->
+      <section class="achievements">
+        <h2 class="section-title" data-aos="fade-up">Our Achievements</h2>
+        <div class="achievement-grid">
+          <div class="achievement-card" data-aos="fade-up">
+            <div class="achievement-icon">
+              <i class="fas fa-trophy"></i>
+            </div>
+            <div class="achievement-number">15+</div>
+            <p>Hackathon Wins</p>
+          </div>
+          <div class="achievement-card" data-aos="fade-up" data-aos-delay="100">
+            <div class="achievement-icon">
+              <i class="fas fa-users"></i>
+            </div>
+            <div class="achievement-number">500+</div>
+            <p>Active Members</p>
+          </div>
+          <div class="achievement-card" data-aos="fade-up" data-aos-delay="200">
+            <div class="achievement-icon">
+              <i class="fas fa-calendar-check"></i>
+            </div>
+            <div class="achievement-number">50+</div>
+            <p>Events Conducted</p>
+          </div>
+          <div class="achievement-card" data-aos="fade-up" data-aos-delay="300">
+            <div class="achievement-icon">
+              <i class="fas fa-laptop-code"></i>
+            </div>
+            <div class="achievement-number">100+</div>
+            <p>Projects Completed</p>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+      <div class="footer-logo">
+        <img src="logo.png" alt="Codex Logo" width="40" />
+        <p>© 2025 Codex Technical Club</p>
+      </div>
+      <p>Quantum University | All rights reserved</p>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+      AOS.init();
+
+      function toggleMenu() {
+        const nav = document.getElementById("nav-links");
+        nav.classList.toggle("show");
+      }
+    </script>
+  </body>
+</html>
